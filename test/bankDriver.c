@@ -28,27 +28,18 @@
 #include "account.h"
 #endif
 
-#ifndef BANK_H
-#define BANK_H
+#ifndef ACCOUNTCLASS_H
+#define ACCOUNTCLASS_H
+#include "accountClass.h"
+#endif
+
 #include "bank.h"
-#endif
 
-#ifndef MENU_H
-#define MENU_H
-#include "menu.h"
-#endif
-
-#define DATA_FILE "accounts.dat"
-
-int main (int argc, char * * argv) {
+int main (int argc, char ** argv) {
+	Account *account;
 	Bank *bank;
+	account = createNewAccount();
 	bank = createOrLoadBank();
-	int menuChoice = -1;		
-	while (menuChoice != 0) {
-		menuChoice = printMenuAndGetMenuChoice();
 
-	}
-	deallocateBankMemory(bank);
 	return 0;
 }
-
